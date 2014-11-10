@@ -1,0 +1,10 @@
+default: &default
+  adapter: postgresql
+
+development:
+  <<: *default
+  database: rails-practice-validations-development
+
+test:
+  <<: *default
+  database: rails-practice-validations-test
