@@ -4,13 +4,21 @@
 
 
 <%= form_for @person, html: {class: "form-horizontal"} do |f| %>
-  <% if @person.errors != nil %>
-    <% @person.errors.full_messages.each do |error| %>
-    <%= error %>
-    <br>
-    <% end %>
-  <% end %>
+  <% if @project.errors.any? %>
+      <div class="col-sm-offset-1 col-sm-12">
+        <div class='col-sm-6'>
+          <div class="alert alert-danger">
 
+          <h5><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h5>
+          <ul>
+          <% @project.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+      <% end %>
+        </div>
+      </div>
+    </div>
+      </ul>
+  <% end %>
   <div class="form-group">
     <%= f.label :first_name, class: "control-label col-sm-2" %>
     <div class="col-sm-4">
