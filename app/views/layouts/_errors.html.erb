@@ -1,11 +1,11 @@
-<% if model.errors.any? %>
+<% if thingy.errors.any? %>
   <div class="form-group">
     <div class="col-sm-10 col-sm-offset-2">
       <div class="alert alert-danger">
-        <strong><%= pluralize(model.errors.count, "error") %> prohibited this post from being saved:</strong>
+        <strong><%= pluralize(thingy.errors.count, "error") %> prohibited this post from being saved:</strong>
 
         <ul>
-          <% model.errors.full_messages.each do |msg| %>
+          <% thingy.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
           <% end %>
         </ul>
